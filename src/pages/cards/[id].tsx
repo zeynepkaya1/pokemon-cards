@@ -61,16 +61,16 @@ const Card = ({ cardInfo, error }: PokemonCardProps) => {
         {isSaved ? "Remove from Favorites" : "Add to Favorites"}
       </button>
       <div>
-        <div className="flex w-full mx-auto mt-10 rounded-2xl  shadow-lg bg-white">
-          <div className="flex items-center w-1/2">
+        <div className="flex w-full mx-auto mt-10 shadow-lg bg-white">
+          <div className="flex items-center bg-slate-100 w-1/2">
             <img
               src={cardInfo.images.large}
               alt={cardInfo.name}
-              className="w-full object-cover"
+              className=" w-full object-cover"
             />
           </div>
-          <div className="w-100 flex">
-            <div className="px-6 py-4 bg-slate-100 rounded-2xl w-1/2">
+          <div className="w-1/2 flex">
+            <div className="px-6 py-4 bg-slate-100  w-100">
               <div className="font-bold text-3xl mb-2">{cardInfo.name}</div>
               <p className="text-gray-700 text-md">
                 Supertype: {cardInfo.supertype} - {cardInfo.subtypes.join(", ")}
@@ -103,14 +103,12 @@ const Card = ({ cardInfo, error }: PokemonCardProps) => {
                   {cardInfo.retreatCost && cardInfo.retreatCost.join(", ")}{" "}
                   (Converted: {cardInfo.convertedRetreatCost})
                 </p>
+                <p className="text-lg italic">{cardInfo.flavorText}</p>
+                <p className="text-lg mt-10">
+                  Set: {cardInfo.set.name} - {cardInfo.set.series} (
+                  {cardInfo.set.printedTotal}/{cardInfo.set.total})
+                </p>
               </div>
-            </div>
-            <div className="px-6 py-4 bg-slate-300  rounded-2xl  w-1/2 ">
-              <p className="text-lg italic">{cardInfo.flavorText}</p>
-              <p className="text-lg">
-                Set: {cardInfo.set.name} - {cardInfo.set.series} (
-                {cardInfo.set.printedTotal}/{cardInfo.set.total})
-              </p>
             </div>
           </div>
         </div>

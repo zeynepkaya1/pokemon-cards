@@ -34,11 +34,11 @@ export default function Home() {
           <Link
             key={index}
             href={`/cards/${item.id}`}
-            className="min-w-[88%] sm:min-w-[63%] md:min-w-[27%] h-[30rem] bg-slate-100 border-gray-100 dark:border-gray-700 relative rounded-lg px-5"
+            className="min-w-[88%] sm:min-w-[63%] md:min-w-[27%] h-[32rem] bg-slate-100 border-gray-100 dark:border-gray-700 relative rounded-lg px-5"
           >
             <div className="mb-10">
-              <div className=" font-medium text-lg flex justify-end mb-5 relative top-6  ">
-                <div className="dark:bg-[#262a33ff] px-2 py-1  z-50 bg-white rounded-2xl ">
+              <div className=" font-medium text-lg flex justify-end mb-10 relative top-6  ">
+                <div className="px-2 py-1 z-50 bg-white rounded-2xl ">
                   <span>{item.hp} HP</span>
                   <span id="hp"></span>
                 </div>
@@ -48,7 +48,7 @@ export default function Home() {
                 className=" rounded-t-[1rem]  w-[100%] h-[40%]  top-0 left-0  absolute  bg-orange-200 rounded-b-[100%]"
               ></div>
               <div className="flex justify-center w-100">
-                <img className="w-100 z-50" alt="" src={item.images.small} />
+                <img className="w-100 z-40" alt="" src={item.images.small} />
               </div>
 
               <p
@@ -61,7 +61,9 @@ export default function Home() {
           </Link>
         ))}
       </div>
-      {isLoading && <div className="w-100 text-lg text-center">Loading...</div>}
+      {isLoading && (
+        <div className="w-100 text-lg text-center mt-5">Loading...</div>
+      )}
     </div>
   );
 }
