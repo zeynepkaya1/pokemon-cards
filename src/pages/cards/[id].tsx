@@ -48,7 +48,6 @@ const Card = ({ cardInfo, error }: PokemonCardProps) => {
     cardInfo.id,
     cardInfo
   );
-  console.log("cardInfo", cardInfo);
   return (
     <div className="w-100 flex flex-col justify-center items-center m-10 p-10">
       <button
